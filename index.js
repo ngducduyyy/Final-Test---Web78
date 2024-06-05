@@ -5,11 +5,17 @@ import mongoose from "mongoose";
 import MiddleWare from "./middleware/MiddleWare.js";
 import AccountController from "./controller/AccountController.js";
 import FilmController from "./controller/FilmController.js";
+import cors from "cors";
 
 const app = express()
 
 
 app.use(express.json())
+
+const corsOptions = {
+    origin: '*',
+};
+app.use(cors(corsOptions));
 
 dotenv.config()
 const PORT = process.env.PORT
