@@ -22,7 +22,8 @@ const FilmController = {
             .limit(size);
 
         res.status(200).send({
-            film
+            film,
+            currentPage: currentPageNum
         })
     },
     addFilm: async (req, res) => {
